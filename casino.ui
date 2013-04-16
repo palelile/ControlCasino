@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Casino</class>
+ <widget class="QMainWindow" name="Casino">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>672</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>16</pointsize>
+    <stylestrategy>PreferAntialias</stylestrategy>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Casino</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QToolBox" name="toolBox">
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="QWidget" name="pageAsistencia">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>654</width>
+         <height>364</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Ingreso de asistencia</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <spacer name="asisSpa1">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="asisLayH">
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="asistenciaRut"/>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="asisLayV">
+            <item>
+             <widget class="QRadioButton" name="asistenciaDes">
+              <property name="text">
+               <string>Desayuno</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="asistenciaAlm">
+              <property name="text">
+               <string>Almuerzo</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="asistenciaInfo">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="asisStac2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageAutorizaciones">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>654</width>
+         <height>364</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Autorizaciones</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <spacer name="autSpa1">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>46</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="0">
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="autLab1">
+            <property name="text">
+             <string>Autorizar</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLineEdit" name="autorizarRut"/>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="autLab2">
+            <property name="text">
+             <string>Desautorizar</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="desautorizarRut"/>
+          </item>
+          <item row="1" column="3">
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="autorizarInfo">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="autSpa2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>45</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageReportes">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>637</width>
+         <height>158</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Reportes</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="repFechaInicio">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="repFechaFin">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="repOpcion">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Asistencia diaria desayuno</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Asistencia diaria almuerzo</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Asistencia por alumno desayuno</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Asistencia por alumno almuerzo</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alumnos autorizados</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="repTabla">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <spacer name="horizontalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="botonImprimir">
+            <property name="text">
+             <string>Imprimir</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="botonGuardar">
+            <property name="text">
+             <string>Guardar PDF</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageSincronizar">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>637</width>
+         <height>295</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Sincronizar</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="3">
+         <spacer name="horizontalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="1">
+         <spacer name="verticalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QGroupBox" name="syncDatosServ">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="title">
+           <string>Servidor</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="7" column="1">
+            <widget class="QPushButton" name="synSincronizar">
+             <property name="text">
+              <string>Sincronizar</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="syncPuerto">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>Puerto</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLineEdit" name="syncPassword">
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+             <property name="placeholderText">
+              <string>Contraseña</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="syncDb">
+             <property name="placeholderText">
+              <string>Base de datos</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="syncUsuario">
+             <property name="placeholderText">
+              <string>Usuario</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="syncDireccion">
+             <property name="placeholderText">
+              <string>Dirección</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QProgressBar" name="progressBar">
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="2" rowspan="3">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Importar SIGE</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QPushButton" name="bot_imp_sige">
+             <property name="text">
+              <string>Importar TXT</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="salir">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Salir</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>asistenciaRut</tabstop>
+  <tabstop>asistenciaDes</tabstop>
+  <tabstop>asistenciaAlm</tabstop>
+  <tabstop>autorizarRut</tabstop>
+  <tabstop>desautorizarRut</tabstop>
+  <tabstop>repFechaInicio</tabstop>
+  <tabstop>repFechaFin</tabstop>
+  <tabstop>repOpcion</tabstop>
+  <tabstop>repTabla</tabstop>
+  <tabstop>syncDireccion</tabstop>
+  <tabstop>syncPuerto</tabstop>
+  <tabstop>syncDb</tabstop>
+  <tabstop>syncUsuario</tabstop>
+  <tabstop>syncPassword</tabstop>
+  <tabstop>salir</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>salir</sender>
+   <signal>clicked()</signal>
+   <receiver>Casino</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>666</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asistenciaRut</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Casino</receiver>
+   <slot>agregarAsistencia()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>687</x>
+     <y>186</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asistenciaDes</sender>
+   <signal>clicked()</signal>
+   <receiver>asistenciaRut</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>470</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>asistenciaAlm</sender>
+   <signal>clicked()</signal>
+   <receiver>asistenciaRut</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>435</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autorizarRut</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Casino</receiver>
+   <slot>autorizarRut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>366</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>702</x>
+     <y>286</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>desautorizarRut</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Casino</receiver>
+   <slot>desAutorizarRut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>380</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>699</x>
+     <y>251</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>synSincronizar</sender>
+   <signal>clicked()</signal>
+   <receiver>Casino</receiver>
+   <slot>sincronizarDB()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>399</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>695</x>
+     <y>406</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>repOpcion</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Casino</receiver>
+   <slot>poblarTabla()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>400</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>691</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>repFechaFin</sender>
+   <signal>dateChanged(QDate)</signal>
+   <receiver>Casino</receiver>
+   <slot>poblarTabla()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>684</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>repFechaInicio</sender>
+   <signal>dateChanged(QDate)</signal>
+   <receiver>Casino</receiver>
+   <slot>poblarTabla()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>704</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>botonGuardar</sender>
+   <signal>clicked()</signal>
+   <receiver>Casino</receiver>
+   <slot>GuardarReporte()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>599</x>
+     <y>452</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>684</x>
+     <y>448</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>botonImprimir</sender>
+   <signal>clicked()</signal>
+   <receiver>Casino</receiver>
+   <slot>ImprimirReporte()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>456</x>
+     <y>466</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>694</x>
+     <y>463</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>poblarTabla()</slot>
+  <slot>agregarAsistencia()</slot>
+  <slot>autorizarRut()</slot>
+  <slot>desAutorizarRut()</slot>
+  <slot>sincronizarDB()</slot>
+  <slot>GuardarReporte()</slot>
+  <slot>ImprimirReporte()</slot>
+ </slots>
+</ui>
