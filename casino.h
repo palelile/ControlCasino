@@ -17,15 +17,16 @@
 #include <QStringList>
 #include <QDebug>
 #include <QFileDialog>
-#include "dbcasino.h"
-#include "dbsinc.h"
-#include "csv_lector.h"
+//#include <dbsinc.h>
+#include <csv_lector.h>
+#include <dblocal.h>
+#include <dbsinc.h>
 
 namespace Ui {
 class Casino;
 }
 
-class Casino : public QMainWindow, dbCasino
+class Casino : public QMainWindow
 {
 	Q_OBJECT
 
@@ -34,10 +35,10 @@ public:
 	~Casino();
 
 private:
+    dbLocal * mi_db;
 	Ui::Casino *ui;
-	dbSinc * sincronizador;
+//	dbSinc * sincronizador;
 	int dbAlumnosId;
-    bool validarAutorizacion(QString rut);
     bool agregarRegistroDb( QString rut, int opcion );
 	bool hayAsistenciaPrevia(QString rut , int opcion);
 	void mensajeErrorAsistencia(int opcion, QString alumno);
@@ -45,7 +46,8 @@ private:
 	void mensajeAutorizar(int opcion, QString alumno);
     void guardarOpciones();
 	void cargarOpciones();
-    QList<QString*> generarReporte(int *nAlumnos, int tipo, int *fin);
+	QSqlQueryModel * generarReporte(int tipo);
+	QString construirHtmlReporte(int tipo, QSqlQueryModel * modelo);
 
 private slots:
     bool agregarAsistencia();
@@ -56,7 +58,7 @@ private slots:
     void poblarTabla();
     void GuardarReporte();
     void ImprimirReporte();
-	void importar_Sige();
+    void importar_Sige();
 };
 
 #endif // CASINO_H

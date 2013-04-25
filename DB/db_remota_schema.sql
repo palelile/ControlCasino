@@ -14,14 +14,14 @@ CREATE TABLE IF NOT EXISTS `alumnos` (
   `apellidoM` varchar(12) DEFAULT NULL,
   `curso` varchar(39) DEFAULT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1057 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `asistenciaCasinoAlmuerzo` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `rut` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1135 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `asistenciaCasinoDesayuno` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -34,4 +34,9 @@ CREATE TABLE IF NOT EXISTS `autorizadosCasino` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `rut` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=604 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+DROP TABLE `autorizadosCasino`;
+DROP TABLE `alumnos`;
+DROP TABLE `asistenciaCasinoAlmuerzo`;
+DROP TABLE `asistenciaCasinoDesayuno`;

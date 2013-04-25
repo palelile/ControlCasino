@@ -7,8 +7,11 @@
 class dbRemota : public db
 {
 public:
-	dbRemota();
+    dbRemota();
+    static dbRemota * getInstance();
 	bool conectar(QString servidor, QString puerto, QString base, QString usuario, QString contr);
+    bool conectar();
+    bool conectar(QString archivo);
 };
 
 #endif // DBREMOTA_H

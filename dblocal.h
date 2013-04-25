@@ -6,8 +6,21 @@
 class dbLocal : public db
 {
 public:
-    dbLocal();
+    static dbLocal * getInstance()
+    {
+        if ( unicaLocal == NULL )
+            dbLocal::unicaLocal = new dbLocal();
+        return dbLocal::unicaLocal;
+    }
+
+    bool conectar();
     bool conectar(QString archivo);
+    bool conectar(QString servidor, QString puerto, QString base, QString usuario, QString contr);
+    bool personas_agregar_muchas(QString datos);
+    void consolidar_temporal();
+private:
+    dbLocal();
+    static dbLocal * unicaLocal;
 };
 
 #endif // DBLOCAL_H

@@ -5,20 +5,18 @@ db::db()
     baseDatos = NULL;
 }
 
-bool db::conectar()
+void db::desconectar()
 {
-    return false;
-}
-
-bool db::desconectar()
-{
-	baseDatos->close();
-	return !baseDatos->isOpen();
+    baseDatos->commit();
+    baseDatos->close();
+    QSqlDatabase::removeDatabase( baseDatos->connectionName() );
 }
 
 bool db::isOpen()
 {
-	return baseDatos->isOpen();
+    if (baseDatos == NULL)
+        return false;
+    return baseDatos->isOpen();
 }
 
 bool db::agregar(QString tabla, QString campos, QString valores)
@@ -26,7 +24,16 @@ bool db::agregar(QString tabla, QString campos, QString valores)
     QSqlQuery consulta(*baseDatos);
     consulta.prepare("INSERT INTO " + tabla +
                      " (" + campos +
-                     ") VALUES (" + valores + ")");
+                     ") VALUES (" + valores + ");");
+    return consulta.exec();
+}
+
+bool db::agregarM(QString tabla, QString campos, QString valores)
+{
+    QSqlQuery consulta(*baseDatos);
+    consulta.prepare("INSERT INTO " + tabla +
+                     " (" + campos +
+                     ") VALUES " + valores + ";");
     return consulta.exec();
 }
 
@@ -36,7 +43,7 @@ bool db::modificar(QString tabl, QString cond, QString cam, QString val)
     QSqlQuery consulta(*baseDatos);
     consulta.prepare("UPDATE " + tabl +
                      " SET " + construirSet(cam, val) +
-                     " WHERE " + cond);
+                     " WHERE " + cond + ";");
     return consulta.exec();
 }
 
@@ -44,7 +51,7 @@ bool db::borrar(QString tabl, QString cond)
 {
     QSqlQuery consulta(*baseDatos);
     consulta.prepare("DELETE FROM " + tabl +
-                     " WHERE " + cond);
+                     " WHERE " + cond + ";");
     return consulta.exec();
 }
 
@@ -55,7 +62,7 @@ QStringList * db::buscar(QString ret, QString tabl, QString cond)
     QSqlQuery consulta(*baseDatos);
     consulta.prepare("SELECT " + ret +
                      " FROM " + tabl +
-                     " WHERE " + cond);
+                     " WHERE " + cond + ";");
     if ( !consulta.exec() || !consulta.next() )
         return NULL;
     for ( int i = 0; i < salida->count(); i++ )
@@ -69,7 +76,7 @@ QStringList * db::buscarColumna(QString col, QString tabl, QString cond)
     QSqlQuery consulta(*baseDatos);
     consulta.prepare("SELECT " + col +
                      " FROM " + tabl +
-                     " WHERE " + cond);
+                     " WHERE " + cond + ";");
     if ( !consulta.exec() || !consulta.next() )
         return NULL;
     do
@@ -103,4 +110,3 @@ QSqlQueryModel * db::modeloConsulta(QObject *parent, QString consulta)
     modelo->setQuery(consulta, *baseDatos);
     return modelo;
 }
-

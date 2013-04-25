@@ -9,23 +9,19 @@
 #include <QStringList>
 #include <QSqlTableModel>
 #include <QSqlRecord>
-#include "dbcasino.h"
+#include <dblocal.h>
 
 class csv_lector
 {
-private:
-    QFile archivo_csv;
-	QSqlTableModel *mi_modelo;
-	dbCasino * mi_db;
 public:
     csv_lector();
-	bool leer_archivo_modelo(QString nombre_archivo);
-	bool leer_archivo_db(QString nombre_archivo, dbCasino *base_datos);
-	bool construir_cabecera_modelo(QString linea);
-	bool leer_linea_modelo(QString linea);
-	QString leer_linea_temporal_db(QString linea);
-	QString leer_linea_curso_db(QString linea);
-	QSqlTableModel * modelo();
+    bool leer_archivo_db(QString nombre_archivo, dbLocal *base_datos);
+
+private:
+    QFile archivo_csv;
+    dbLocal * mi_db;
+    QString leer_linea_temporal_db(QString linea);
+    QString leer_linea_curso_db(QString linea);
 };
 
 #endif // CSV_LECTOR_H

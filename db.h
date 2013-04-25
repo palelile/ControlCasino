@@ -16,16 +16,18 @@
 class db
 {
 public:
-	db();
 
     // Funciones a ser portadas a distintos motores de bases de datos
-    virtual bool conectar();
-	bool desconectar();
-	bool isOpen();
+    virtual bool conectar()=0;
+    virtual bool conectar(QString archivo)=0;
+    virtual bool conectar(QString servidor, QString puerto, QString base, QString usuario, QString contr)=0;
+    void desconectar();
+    bool isOpen();
     int estado();
 
     // Función generica de  manejo de datos
     bool agregar(QString tabla, QString campos, QString valores);
+    bool agregarM(QString tabla, QString campos, QString valores);
     bool modificar(QString tabl, QString cond, QString cam, QString val);
     bool borrar(QString tabl, QString cond);
     QStringList *buscar(QString ret, QString tabl, QString cond);
@@ -40,6 +42,7 @@ public:
 
 protected:
     QSqlDatabase * baseDatos;
+    db();
 };
 
 #endif // DB_H

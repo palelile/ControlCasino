@@ -17,8 +17,7 @@ SOURCES += main.cpp\
     rut.cpp \
     dbsinc.cpp \
     dbremota.cpp \
-    csv_lector.cpp \
-    dbcasino.cpp
+    csv_lector.cpp
 
 HEADERS  += casino.h \
     dblocal.h \
@@ -26,8 +25,7 @@ HEADERS  += casino.h \
     rut.h \
     dbsinc.h \
     dbremota.h \
-    csv_lector.h \
-    dbcasino.h
+    csv_lector.h
 
 FORMS    += casino.ui
 
